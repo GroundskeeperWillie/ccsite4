@@ -1,7 +1,8 @@
 Ccsite4::Application.routes.draw do
   get "static_pages/splash"
-
   get "static_pages/home"
+  root :to => "static_pages#splash"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
