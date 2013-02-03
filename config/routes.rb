@@ -1,7 +1,12 @@
 Ccsite4::Application.routes.draw do
-  get "static_pages/splash"
-  get "static_pages/home"
-  root :to => "static_pages#splash"
+
+  get "users/new"
+  root :to => 'static_pages#splash'
+  
+  match '/home', :to => 'static_pages#home'
+  match '/signup', :to => 'users#new'
+
+
   
 
   # The priority is based upon order of creation:
