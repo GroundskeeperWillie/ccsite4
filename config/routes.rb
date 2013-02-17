@@ -6,6 +6,9 @@ Ccsite4::Application.routes.draw do
   match '/home', :to => 'static_pages#home'
   match '/signup', :to => 'users#new'
 
+  match '/details', :to => 'static_pages#details'
+  match '/registry', :to => 'static_pages#registry'
+  match '/contact', :to => 'static_pages#contact'
 
   
 
