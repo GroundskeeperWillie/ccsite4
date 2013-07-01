@@ -44,7 +44,21 @@ describe "User pages" do
         end
       end
     end
-
+    describe "profile page" do
+      let(:user) { FactoryGirl.create(:user)}
+      let(:g1) { FactoryGirl.create(:guest, user: user, name: "Foo")}
+      let(:g2) { FactoryGirl.create(:guest, user: user, name: "Bar")}
+      
+      before {visit user_path(user) }
+      
+      it { should have_selector('h1'),  text: user.name }
+      it { should have_selector('title'), text: user.name }
+      
+      describe "guests" do
+        it {should have_content(g1.name) }
+        it {should have_content(g2.name) }
+      end
+    end
   describe "signup page" do
     before { visit signup_path }
 

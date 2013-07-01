@@ -22,6 +22,7 @@ describe User do
     
     it { should respond_to(:admin) }
     it { should respond_to(:authenticate) }
+    it { should respond_to(:guests) }
 
     it { should be_valid }
     it { should_not be_admin }
@@ -42,4 +43,17 @@ describe User do
         before { @user.save }
         its(:remember_token) { should_not be_blank }
     end
+    describe "guest associations" do
+
+      before { @user.save }
+        it "should destroy associated microposts" do
+          guests = @user.guests.dup
+          @user.destroy
+          guests.should be_empty
+          guests.each do |guest|
+            Guest.find_by_id(guest.id).should be_nil
+          end
+        end
+      end
+   
 end

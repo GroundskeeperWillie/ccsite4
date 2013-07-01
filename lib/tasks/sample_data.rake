@@ -15,5 +15,10 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+    users = User.all(limit: 6)
+    5.times do
+      name = Faker::Lorem.sentence(1)
+      users.each { |user| user.guests.create!(name: name) }
+    end
   end
 end

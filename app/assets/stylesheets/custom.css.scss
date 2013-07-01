@@ -201,3 +201,43 @@ input {
     }
   }
 }
+
+/* guests */
+
+.guests {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: block;
+
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;	
+  };
+}
+/* block text */
+.blocktext {
+  text-align: left;
+}
+.littletext {
+  font-size: 12px;
+  text-align: left;
+}
+
+.basictable {
+  tr:nth-child(even) {
+    background-color: #FFFFFF;
+  }
+  tr:nth-child(odd) {
+    background-color: #DFDFE1;
+  }
+}

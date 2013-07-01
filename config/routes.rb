@@ -2,18 +2,22 @@ Ccsite4::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :guests, only: [:new, :create, :destroy, :update]
   
   root :to => 'static_pages#splash'
   
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+
   
   match '/details', :to => 'static_pages#details'
   match '/registry', :to => 'static_pages#registry'
   match '/contact', :to => 'static_pages#contact'
-
-  
+  match '/details', :to => 'static_pages#details'
+  match '/accomodation', :to => 'static_pages#accomodation'
+  match '/directions', :to => 'static_pages#directions'
+  match '/home', :to => 'static_pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -9,4 +9,9 @@ FactoryGirl.define do
       admin true
     end
   end
+  
+  factory :guest do
+    name "Lauren Gypsum"
+    user
+  end
 end
